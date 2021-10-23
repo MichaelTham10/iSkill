@@ -1,0 +1,27 @@
+#main{
+    margin: 0;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    padding-right: 86px;
+    background-color:  #E8E8E8;
+}
+#description{
+    padding-top: 93px;
+    padding-left: 85px;
+}
+#description h1{
+    width: 80%;
+    font-size: 45px;
+    
+    font-weight: 700;
+}
+
+#description p {
+    font-weight: 400;
+}
+
+#btn-register{
+    background-color: #D52484;
+    color: white;
+    border-radius: 50px;
+}

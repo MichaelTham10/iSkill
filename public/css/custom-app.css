@@ -1,0 +1,33 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+#login-wrapper {
+    border: 1px solid #D52484;
+    border-radius: 50px;
+    margin-right: 15px;
+    padding: 6px 17px 6px 17px;
+    color: #D52484;
+    font-weight: 500;
+}
+
+#login-wrapper:hover{
+   font-weight: bold;
+}
+
+#register-wrapper{
+    border: 1px solid #D52484;
+    background-color: #D52484;
+    border-radius: 50px;
+    margin-left: 15px;
+    padding: 6px 17px 6px 17px;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+#register-wrapper:hover{
+    font-weight: bold;
+}
+
+
+
