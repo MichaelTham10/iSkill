@@ -15,9 +15,28 @@
                 <p>Pilih kelas sesuai dengan bidang yang kamu inginkan</p>
                 <button id="btn-register" class="btn">Daftar Sekarang</button>
             </div>
-            <div id="image">
+            <div class="animate__animated animate__zoomIn" id="image">
                 <img src="{{asset('assets/welcome-pic.png')}}" alt="">
             </div>
         </div>
+    </div>
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center" id="mid">
+            <h2>Kategori</h2>
+            <a href="">Lihat semua</a>
+        </div>
+        <div class="d-inline" id="category">
+            <img src="{{asset('assets/dummy/dummy1.png')}}" alt="">
+            <img src="{{asset('assets/dummy/dummy1.png')}}" alt="">
+            <img src="{{asset('assets/dummy/dummy1.png')}}" alt="">
+            <img src="{{asset('assets/dummy/dummy1.png')}}" alt="">
+            <img src="{{asset('assets/dummy/dummy1.png')}}" alt="">
+            <img src="{{asset('assets/dummy/dummy1.png')}}" alt="">
+            <img src="{{asset('assets/dummy/dummy1.png')}}" alt="">
+
+            <img src="{{asset('assets/dummy/dummy1.png')}}" alt="">
+            
+        </div>
+        
     </div>
 @endsection

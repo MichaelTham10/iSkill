@@ -1,3 +1,4 @@
+/* Top Content */
 #main{
     margin: 0;
     padding-top: 60px;
@@ -24,4 +25,18 @@
     background-color: #D52484;
     color: white;
     border-radius: 50px;
+}
+
+/* Mid Content */
+
+#mid{
+    padding-top: 55px;
+}
+
+
+#category img{
+    color: black;
+    width: 295px;
+    height: 230px;
+    padding-right: 30px;
 }
