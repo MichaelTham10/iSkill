@@ -93,6 +93,32 @@
         <main class="">
             @yield('content')
         </main>
+
+        <div id="footer">
+            <div class="d-flex justify-content-between align-items-center">
+                <img id="footer-logo" src="{{asset('assets/logo.png')}}" alt="" width="118px" height="40px">
+                <div id="footer-desc" class="d-flex justify-content-between">
+                    <div id="footer-list">
+                        <h2>ISkill</h2>
+                        <p>Tentang Kami</p>
+                        <p>Blog</p>
+                    </div>
+                    <div id="footer-list">
+                        <h2>Layanan</h2>
+                        <p>Kelas</p>
+                        <p>Kerja</p>
+                        <p>Notes</p>
+                        <p>Podomoro Timer</p>
+                    </div>
+                    <div id="footer-list">
+                        <h2>Bantuan dan Panduan</h2>
+                        <p>Syarat dan Ketentuan</p>
+                        <p>Kebijakan Privasi</p>
+                        <p>Bantuan</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>

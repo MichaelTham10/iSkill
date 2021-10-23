@@ -1,6 +1,7 @@
 body{
     margin: 0;
     padding: 0;
+    background-color: #F9F9FA;
 }
 #login-wrapper {
     border: 1px solid #D52484;
@@ -27,6 +28,26 @@ body{
 
 #register-wrapper:hover{
     font-weight: bold;
+}
+
+#footer{
+    margin-top: 55px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    position: relative;
+    background-color: rgb(255, 255, 255);
+}
+
+#footer-logo{
+    margin-left: 40px;
+}
+
+#footer-desc{
+    padding-right: 40px;
+}
+
+#footer-list{
+    padding-left: 35px;
 }
 
 
