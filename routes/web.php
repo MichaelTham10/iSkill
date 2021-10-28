@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Category\CategoryController;
+use App\Http\Controllers\Class\ClassController;
+use App\Http\Controllers\Jobs\JobsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,6 +19,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/category', [CategoryController::class, 'index']);
+Route::get('/class', [ClassController::class, 'index'] );
+Route::get('/jobs', [JobsController::class, 'index']);
 
 Auth::routes();
 

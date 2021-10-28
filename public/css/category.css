@@ -1,0 +1,24 @@
+#title{
+    font-weight: 700;
+    font-size: 32px;
+    padding-top: 50px;
+    
+}
+
+#search{
+    border-radius: 25px;
+    padding: 20px; 
+    margin-right: 10px; 
+}
+
+#search-bar img{
+    
+    width: 30px;
+    height: 30px;
+}
+
+#category{
+    margin-left: 85px;
+    margin-right: 85px;
+    margin-bottom: 413px;
+}

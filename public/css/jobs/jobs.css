@@ -1,0 +1,137 @@
+#main{
+    padding-right: 21px;
+    padding-left: 21px;
+    padding-bottom: 118px;
+}
+#wrapper{
+    margin-top: 39px;
+}
+
+#title{
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+#top-wrapper{
+    padding-left: 27px;
+    padding-right: 18px;
+}
+
+#top-item{
+    width: 218px;
+    height: 200px;
+    box-shadow: 0px 8px 24px -1px rgba(0, 0, 0, 0.1);
+    background: #FFFFFF;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 45px;
+}
+
+#top-item p{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+
+#icon {
+    width: 46px;
+    height: 46px;
+    background-color: #D52484;
+    border-radius: 50px;
+}
+
+#icon span{
+    font-size: 30px;
+    color: white;
+}
+
+/* Content */
+#content{
+    padding-left: 64px;
+    
+}
+
+
+#title-content{
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 40px;
+    
+}
+
+#item-content{
+    width: fit-content;
+   
+}
+
+#item-detail-content{
+    width: 277px;
+    height: 333px;
+    background: #FFFFFF;
+    box-shadow: 0px 8px 24px -1px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    margin-right: 68px;
+    margin-bottom: 33px;
+}
+
+#item-detail-title{
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+#item-detail-time{
+    font-size: 13px;
+    font-weight: 500;
+    color: #9E9E9E;
+}
+
+#item-detail img{
+    margin-left: 88px;
+    margin-right: 88px;
+    margin-top: 9px;
+}
+
+#item-detail-identity{
+    margin-left: 16px;
+}
+
+#item-detail i{
+    font-size: 24px;
+}
+
+#item-detail .fa-clock-o{
+    margin-left: -4px;
+}
+
+#desc-wrapper{
+    margin-bottom: 16px;
+}
+
+#item-detail span{
+    padding-left: 8px;
+    
+}
+
+#clock{
+    margin-left: -3px;
+}
+
+#apply-btn{
+    margin: auto;
+    padding: 4px 22px 4px 22px;
+    color: white;
+    border: none;
+    background-color: #D52484;
+    width: 81px;   
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    margin-left: 98px;
+    margin-right: 98px;
+    margin-bottom: 15px;
+}

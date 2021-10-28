@@ -11,6 +11,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/title-logo.png')}}">
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -19,8 +20,10 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/custom-app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/animate.css') }}" rel="stylesheet">
     @yield('style')
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <div id="app">
@@ -36,12 +39,12 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto animate__animated animate__fadeIn">
+                    <ul class="navbar-nav mr-auto wow fadeIn">
                         <li class="nav-item">
-                            <a class="nav-link text-dark pl-5" href="">Kelas</a>
+                            <a class="nav-link text-dark pl-5" href="/class">Kelas</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark pl-5" href="">Kerja</a>
+                            <a class="nav-link text-dark pl-5" href="/jobs">Kerja</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark pl-5" href="">Notes</a>
@@ -120,5 +123,8 @@
             </div>
         </div>
     </div>
+    <script src="{{ asset('js/wow.min.js') }}"></script>
+    <script>new WOW().init();</script>
+    @yield('script')
 </body>
 </html>
