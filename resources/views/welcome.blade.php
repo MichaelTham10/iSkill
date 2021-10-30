@@ -27,13 +27,15 @@
         </div>
        
     </div>
+
     <div id="mid-wrapper">
         <div class="d-flex justify-content-between align-items-center" id="mid">
             <h2>Kategori</h2>
             <a href="/category">Lihat semua <img src="{{asset('assets/icon/arrow-right.svg')}}" alt=""></a>
-            
+        </div>
     </div>
-    <div>
+
+    <div class="content">
         @include('components.category-grid')
         
         <div id="bot">
@@ -41,28 +43,28 @@
             <div class="d-flex wow fadeInUp" id="bot-content">
                 <div class="d-flex" id="bot-detail">
                     <img id="icons" src="{{asset('assets/icon/sertif.png')}}" alt="">
-                    <div>
+                    <div class="desc-items">
                         <p id="description-title">Sertifikat</p>
                         <span id="description-text">Kamu akan mendapatkan setrifikat setelah menyelesaikan kelas yang kamu ambil.</span>
                     </div>
                 </div>
                 <div class="d-flex" id="bot-detail">
                     <img id="icons" src="{{asset('assets/icon/globe.png')}}" alt="">
-                    <div>
+                    <div class="desc-items">
                         <p id="description-title">Penyaluran Kerja</p>
-                        <span id="description-text">Setelah kamu menguasai skill favoritemu, kamu akan disalurkan berkerja di perusahaan ternama.</span>
+                        <span id="description-text">Setelah kamu menguasai skill favoritemu, kamu akan dapat kesempatan untuk berkerja di perusahaan ternama.</span>
                     </div>
                 </div>
                 <div class="d-flex" id="bot-detail">
                     <img id="icons" src="{{asset('assets/icon/time.png')}}" alt="">
-                    <div>
+                    <div class="desc-items">
                         <p id="description-title">Waktu Fleksibel</p>
                         <span id="description-text">Waktu belajar yang sangat fleksibel, kamu dapat belajar dimanapun dan kapanpun.</span>
                     </div>
                 </div>
                 <div class="d-flex" id="bot-detail">
                     <img id="icons" src="{{asset('assets/icon/update.png')}}" alt="">
-                    <div>
+                    <div class="desc-items">
                         <p id="description-title">Materi Terupdate</p>
                         <span id="description-text">Kamu akan terus mendapatkan materi-materi terbaru untuk kelas yang kamu ambil.</span>
                     </div>

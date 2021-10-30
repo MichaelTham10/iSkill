@@ -20,8 +20,8 @@
 }
 
 #top-item{
-    width: 218px;
-    height: 200px;
+    width: 170px;
+    height: 150px;
     box-shadow: 0px 8px 24px -1px rgba(0, 0, 0, 0.1);
     background: #FFFFFF;
     border-radius: 15px;
@@ -33,7 +33,7 @@
 }
 
 #top-item p{
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 600;
 }
 
