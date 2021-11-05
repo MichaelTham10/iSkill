@@ -36,7 +36,7 @@
     </div>
 
     <div class="content">
-        @include('components.category-grid')
+        @include('components.category-grid', ['categories' => $categories])
         
         <div id="bot">
             <h2>Apa sih keuntungannya belajar di ISKILL?</h2>

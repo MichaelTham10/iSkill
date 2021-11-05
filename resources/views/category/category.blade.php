@@ -19,7 +19,7 @@
         </form>  
     </div>
     <div class="pt-5">
-        @include('components.category-grid')
+        @include('components.category-grid', ['categories' => $categories])
     </div>
 @endsection
 

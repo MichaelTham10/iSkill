@@ -1,20 +1,35 @@
 <?php
 
-namespace App\Http\Controllers\Class;
+namespace App\Http\Controllers\Courses;
 
 use App\Http\Controllers\Controller;
+use App\Models\CourseDetail;
+use App\Models\Courses;
 use Illuminate\Http\Request;
 
-class ClassController extends Controller
+class CourseController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        return view('class.class');
+        
+        $courses = Courses::where('category_id',$id)->get();
+
+        return view('courses.course' , compact('courses'));
+    }
+
+    public function preview($id)
+    {
+        $course = Courses::findOrFail($id);
+
+        $detail = CourseDetail::where('course_id',$id)->where('current',true)->first();
+
+        return view('courses.preview', compact('course', 'detail'));
+
     }
 
     /**

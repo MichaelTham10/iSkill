@@ -5,11 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
+class CourseDetail extends Model
 {
     use HasFactory;
 
-    public function courses(){
-        return $this->hasMany(Courses::class);
-    }
+    protected $fillable = [
+        'current',
+        'status',
+        
+    ];
 }

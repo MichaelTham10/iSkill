@@ -1,22 +1,28 @@
 <?php
 
-namespace App\Http\Controllers\Category;
+namespace App\Http\Controllers\Courses;
 
 use App\Http\Controllers\Controller;
-use App\Models\Category;
+use App\Models\CourseDetail;
 use Illuminate\Http\Request;
 
-class CategoryController extends Controller
+class CoursesDetailController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        $categories = Category::all();
-        return view('category.category', compact('categories'));
+        $getVideo = CourseDetail::findOrFail($id);
+
+        $details = CourseDetail::where('course_id',$getVideo->course_id)->get();
+
+        
+        //dd($getVideo);
+
+        return view('courses.detail', compact('details', 'getVideo'));
     }
 
     /**
@@ -27,6 +33,28 @@ class CategoryController extends Controller
     public function create()
     {
         //
+    }
+
+    public function statusUpdate($nextId, $prevId)
+    {
+        if($nextId == $prevId){
+            return back();
+        }
+        
+        CourseDetail::findOrFail($nextId)->update([
+            'current' => true
+        ]);
+
+        CourseDetail::findOrFail($prevId)->update([
+            'current' => false
+        ]);
+
+
+        $getVideo = CourseDetail::findOrFail($nextId);
+        
+       
+        return redirect()->route('detail', ['id' => $getVideo->id]);
+
     }
 
     /**

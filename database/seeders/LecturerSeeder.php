@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class CategorySeeder extends Seeder
+class LecturerSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,9 +14,9 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-        DB::table('categories')->insert([
-            'name' => 'Ilmu Komputer',
-            'image' => '../../assets/seeders/category/TI.png'
+        DB::table('lecturers')->insert([
+            'name' => 'Michael Thamniago',
+            'image' => '../../assets/seeders/lecturer/Photo.png'
         ]);
     }
 }

@@ -1,42 +1,11 @@
 <div class="" id="category">
-    <div id="list">
-        <div id="list-wrapper">
-            <span>Ilmu Komputer</span>
-        </div>
-    </div>
-    <div id="list">
-        <div id="list-wrapper">
-            <span>Ilmu Komputer</span>
-        </div>
-    </div>
-    <div id="list">
-        <div id="list-wrapper">
-            <span>Ilmu Komputer</span>
-        </div>
-    </div>
-    <div id="list">
-        <div id="list-wrapper">
-            <span>Ilmu Komputer</span>
-        </div>
-    </div>
-    <div id="list">
-        <div id="list-wrapper">
-            <span>Ilmu Komputer</span>
-        </div>
-    </div>
-    <div id="list">
-        <div id="list-wrapper">
-            <span>Ilmu Komputer</span>
-        </div>
-    </div>
-    <div id="list">
-        <div id="list-wrapper">
-            <span>Ilmu Komputer</span>
-        </div>
-    </div>
-    <div id="list">
-        <div id="list-wrapper">
-            <span>Ilmu Komputer</span>
-        </div>
-    </div>
+    @foreach ($categories as $category)
+        <a href="/course/{{$category->id}}">
+            <div id="list" style="background-image: url({{$category->image}})">
+                <div id="list-wrapper">
+                    <span>{{$category->name}}</span>
+                </div>
+            </div>
+        </a>
+    @endforeach 
 </div>
