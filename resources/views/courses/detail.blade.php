@@ -20,9 +20,11 @@
                         <form action="/course-status/{{$detail->id}}/{{$getVideo->id}}" method="POST">
                             @csrf
                             @method('PATCH')
-                            <div class="">
+                            <div class="d-flex justify-content-between align-items-center">
                                 <button class="dropdown-item btn btn-light" type="submit">{{$detail->title}}</button>
+                                <i class="fa fa-check" style="{{$detail->status ? 'display: block' : 'display: none'}}"></i>
                             </div>
+                           
                             
                            
                         </form>
@@ -30,7 +32,15 @@
                 </div>
             </div>  
 
-            <button class="next-btn">Tandai selesai & lanjutkan course berikutnya</button>
+            <form action="/next-btn/{{$getVideo->id}}" method="POST">
+                @csrf
+                @method('PATCH')
+                <div class="">
+                    <button type="submit" class="next-btn">Tandai selesai & lanjutkan course berikutnya</button>
+                </div>
+                 
+            </form>
+            
         </div>
         
         <div>

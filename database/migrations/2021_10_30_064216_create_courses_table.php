@@ -20,6 +20,7 @@ class CreateCoursesTable extends Migration
             $table->bigInteger("lecturer_id")->unsigned();
             $table->string("name");
             $table->bigInteger("price");
+            $table->string("description");
             $table->integer("rate");
             $table->string("image");
             $table->timestamps();

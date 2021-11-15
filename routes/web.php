@@ -26,9 +26,11 @@ Route::get('/course/{id}', [CourseController::class, 'index']);
 Route::get('/course/preview/{id}', [CourseController::class, 'preview']);
 
 Route::get('/course/detail/{id}',[CoursesDetailController::class, 'index'])->name('detail');
+
 Route::get('/jobs', [JobsController::class, 'index']);
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::patch('/course-status/{nextId}/{prevId}', [CoursesDetailController::class, 'statusUpdate']);
+Route::patch('/next-btn/{id}', [CoursesDetailController::class, 'nextCourse']);

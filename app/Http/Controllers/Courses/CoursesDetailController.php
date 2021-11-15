@@ -57,6 +57,34 @@ class CoursesDetailController extends Controller
 
     }
 
+    public function nextCourse($id){
+
+        if(CourseDetail::where('id', $id+1)->first() == null){
+            CourseDetail::findOrFail($id)->update([
+                'current' => false,
+                'status' => true
+            ]);
+            CourseDetail::findOrFail(1)->update([
+                'current' => true
+            ]);
+            return redirect()->route('detail', ['id' => 1]);
+        }
+
+        CourseDetail::findOrFail($id + 1)->update([
+            'current' => true
+        ]);
+        
+
+        CourseDetail::findOrFail($id)->update([
+            'current' => false,
+            'status' => true
+        ]);
+
+        $getVideo = CourseDetail::findOrFail($id + 1);
+
+        return redirect()->route('detail', ['id' => $getVideo->id]);
+    }
+
     /**
      * Store a newly created resource in storage.
      *

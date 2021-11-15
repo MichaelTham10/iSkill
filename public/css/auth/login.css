@@ -1,0 +1,134 @@
+*{
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    margin: 0;
+    padding: 0;
+    
+}
+#login-wrap{
+    height: 46.6rem;
+    display: flex;
+}
+
+#image-container{
+    width: 50%;
+    background-color: rgba(213, 36, 132, .3);
+    height: 100%;
+    
+}
+
+#image-wrap #ils{
+    display: flex;
+    width: 505px;
+    height: 405px;
+    margin: auto;
+}
+
+#back-btn{
+    padding-left: 45px;
+    padding-top: 45px;
+}
+
+#form-input{
+    width: 50%;
+}
+
+#logo-img{
+    display: flex;
+    margin: auto;
+    padding-top: 106px;
+    padding-bottom: 73px;
+}
+
+#text-login p{
+    text-align: center;
+}
+
+#masuk{
+    margin-top: 0;
+    font-size: 42px;
+   
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+#masuk-desc{
+    margin-top: 0;
+    font-size: 14px;
+   
+    font-weight: 500;
+    margin-bottom: 54;
+}
+
+#form-group input{
+    display: flex;
+    margin: auto;
+    width: 500px;
+    height: 40px;
+    background-color: transparent;
+    color: #eeeeee;
+    outline: none;
+    outline-style: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: solid #000000 1px;
+    padding: 3px 10px;
+}
+
+#form-group p{
+    text-align: center;
+}
+
+#form-group button{
+    cursor: pointer;
+    display: flex;
+    margin: auto;
+    margin-top: 45px;
+    margin-bottom: 20px;
+    width: 500px;
+    
+    justify-content: center;
+    align-items: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border: none;
+    border-radius: 20px;
+
+    background-color: #D52484;
+
+    color: white;
+
+    font-weight: 700;
+
+    
+}
+
+#form-group button:active{
+    
+    background-color: #9e1a63;
+    
+    font-weight: bolder;
+}
+
+#form-extension{
+    display: flex;
+    margin: auto;
+    text-align: center;
+}
+
+#form-extension div{
+    width: 100%;
+}
+
+#form-extension a{
+    color: #D52484;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+#form-extension a:hover{
+    
+    font-weight: 700;
+}
