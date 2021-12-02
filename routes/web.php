@@ -1,9 +1,12 @@
 <?php
 
+use App\Http\Controllers\Cart\CartController;
 use App\Http\Controllers\Category\CategoryController;
 use App\Http\Controllers\Courses\CourseController;
 use App\Http\Controllers\Courses\CoursesDetailController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Jobs\JobsController;
+use App\Http\Controllers\Order\OrderController;
 use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -29,8 +32,19 @@ Route::get('/course/detail/{id}',[CoursesDetailController::class, 'index'])->nam
 
 Route::get('/jobs', [JobsController::class, 'index']);
 
+Route::get('/mycart', [CartController::class, 'index']);
+
+Route::get('/dashboard', [DashboardController::class, 'index']);
+
+
+
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::post('/cart/{id}', [CartController::class, 'store']);
+Route::post('/order', [OrderController::class, 'store']);
 Route::patch('/course-status/{nextId}/{prevId}', [CoursesDetailController::class, 'statusUpdate']);
 Route::patch('/next-btn/{id}', [CoursesDetailController::class, 'nextCourse']);

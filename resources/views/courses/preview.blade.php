@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('title', 'class')
-<link href="{{ asset('css/courses/preview.css') }}" rel="stylesheet">
-@section('style')
     
+@section('style')
+    <link href="{{ asset('css/courses/preview.css') }}" rel="stylesheet">
 @endsection
 
 @section('content')
@@ -28,12 +28,18 @@
             <div class="price">
                 <span>IDR {{number_format($course->price)}}</span> 
             </div>
-            <button class="cart_btn">
-                <div>
-                    <i class="fa fa-shopping-cart" aria-hidden="true"></i> 
-                    Add to cart
-                </div>
-            </button>
+            <form action="/cart/{{$course->id}}" method="POST">
+                @csrf
+                <button type="submit" class="cart_btn">
+                    <div>
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i> 
+                        Add to cart
+                    </div>
+                </button>
+            </form>
+            
+            
+            
        </div>
     </div>
     

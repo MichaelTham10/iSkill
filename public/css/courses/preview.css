@@ -52,15 +52,27 @@ iframe{
    
 }
 
+form{
+    
+    width: 50%;
+    
+   
+    border-top: 2px solid #D52484;
+    border-bottom-right-radius: 25px;
+    margin-bottom: 0;
+    
+}
+
 .cart_btn{
     cursor: pointer;
-    width: 50%;
+    width: 100%;
     border: none;
     color: #D52484;
     background-color: white;
-    border-top: 2px solid #D52484;
+    
     border-bottom-right-radius: 25px;
     padding: 10px;
+    text-align: center;
 }
 
 .cart_btn i{
