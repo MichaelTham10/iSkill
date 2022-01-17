@@ -13,7 +13,7 @@
         
         
         <div id="image-container">
-            <a href="">
+            <a href="/">
                 <img id="back-btn" src="{{asset('assets/icon/loginBack.svg')}}" alt="">
             </a>
             

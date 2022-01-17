@@ -19,6 +19,8 @@ class CategoryController extends Controller
         return view('category.category', compact('categories'));
     }
 
+    
+
     /**
      * Show the form for creating a new resource.
      *

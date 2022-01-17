@@ -26,7 +26,7 @@ Route::get('/', [WelcomeController::class, 'index']);
 
 Route::get('/category', [CategoryController::class, 'index']);
 Route::get('/course/{id}', [CourseController::class, 'index']);
-Route::get('/course/preview/{id}', [CourseController::class, 'preview']);
+Route::get('/course/preview/{id}', [CourseController::class, 'preview'])->middleware('auth');
 
 Route::get('/course/detail/{id}',[CoursesDetailController::class, 'index'])->name('detail');
 
@@ -35,9 +35,6 @@ Route::get('/jobs', [JobsController::class, 'index']);
 Route::get('/mycart', [CartController::class, 'index']);
 
 Route::get('/dashboard', [DashboardController::class, 'index']);
-
-
-
 
 Auth::routes();
 
@@ -48,3 +45,8 @@ Route::post('/cart/{id}', [CartController::class, 'store']);
 Route::post('/order', [OrderController::class, 'store']);
 Route::patch('/course-status/{nextId}/{prevId}', [CoursesDetailController::class, 'statusUpdate']);
 Route::patch('/next-btn/{id}', [CoursesDetailController::class, 'nextCourse']);
+
+
+// Admin
+
+Route::get('/manage-course', [CourseController::class, 'manageCourse'])->middleware('admin');

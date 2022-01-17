@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Courses;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\CourseDetail;
 use App\Models\Courses;
 use Illuminate\Http\Request;
@@ -20,6 +21,11 @@ class CourseController extends Controller
         $courses = Courses::where('category_id',$id)->get();
 
         return view('courses.course' , compact('courses'));
+    }
+
+    public function manageCourse(){
+        $categories = Category::all();
+        return view('courses.manage_category', compact('categories'));
     }
 
     public function preview($id)

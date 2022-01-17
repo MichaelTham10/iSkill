@@ -57,7 +57,7 @@
                     <div id="grid-item">
                         <img src="{{$course->image}}" alt="">
                         <div id="grid-item-desc">
-                            <a href="/course/preview/{{$course->id}}"><p id="grid-item-title">{{$course->name}}</p></a> 
+                            <a href="/course/preview/{{$course->id}}" id="grid-item-title">{{$course->name}}</a> 
                             <div class="d-flex align-items-center" id="grid-rating">
                                         
                                 <span id="star-1" class="fa fa-star"></span>
@@ -65,9 +65,9 @@
                                 <span id="star-3" class="fa fa-star"></span>
                                 <span id="star-4" class="fa fa-star"></span>
                                 <span id="star-5" class="fa fa-star"></span>
-                                <span>(550)</span>
+                                <span>({{$course->rate_count}})</span>
                             </div>
-                            <p id="grid-item-price">Rp.150.000</p>
+                            <p id="grid-item-price">Rp. {{number_format($course->price)}}</p>
                         </div>
                     </div>
                 @endforeach

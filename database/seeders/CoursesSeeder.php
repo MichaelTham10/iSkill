@@ -21,8 +21,8 @@ class CoursesSeeder extends Seeder
             "price" => 150000,
             "description" => "Laravel merupakan salah satu framework yang ada di bahasa pemograman PHP. Di kelas ini anda akan belajar bagaimana membuat website dengan laravel, serta bagaimana laravel itu bekerja.",
             "rate" => 5,
-            "image" => '../../assets/seeders/courses/laravel.png'
-
+            "image" => '../../assets/seeders/courses/laravel.png',
+            "rate_count" => 500,
         ]);
 
         DB::table('courses')->insert([
@@ -32,8 +32,8 @@ class CoursesSeeder extends Seeder
             "price" => 50000,
             "description" => "Java merupakan suatu bahasa yang paling sering digunakan saat ini. Di kelas ini anda akan mempelajari bagaimana dasar-dasar dari java, mulai dari tipe data, print, dan juga membuat menu.",
             "rate" => 5,
-            "image" => '../../assets/dummy/dummy2.png'
-
+            "image" => '../../assets/dummy/dummy2.png',
+            "rate_count" => 300,
         ]);
     }
 }

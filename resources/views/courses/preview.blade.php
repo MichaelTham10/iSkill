@@ -26,7 +26,7 @@
         
        <div class="d-flex btm_item">
             <div class="price">
-                <span>IDR {{number_format($course->price)}}</span> 
+                <span>Rp. {{number_format($course->price)}}</span> 
             </div>
             <form action="/cart/{{$course->id}}" method="POST">
                 @csrf
@@ -37,8 +37,6 @@
                     </div>
                 </button>
             </form>
-            
-            
             
        </div>
     </div>

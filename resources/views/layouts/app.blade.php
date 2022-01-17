@@ -41,17 +41,9 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto wow fadeIn">
                         <li class="nav-item">
-                            <a class="nav-link text-dark pl-5" href="/class">Kelas</a>
+                            <a class="nav-link text-dark pl-5" href="/category">Kelas</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark pl-5" href="/jobs">Kerja</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark pl-5" href="">Notes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark pl-5" href="">Forum</a>
-                        </li>
+                        
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -76,12 +68,22 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="/dashboard">
-                                        Dashboard
-                                    </a>
-                                    <a class="dropdown-item" href="/mycart">
-                                        My Cart
-                                    </a>
+                                    @if (Auth::user()->is_admin)
+                                        <a class="dropdown-item" href="">
+                                            Add Course
+                                        </a>
+                                        <a class="dropdown-item" href="/manage-course">
+                                            Manage Course
+                                        </a>
+                                    @else
+                                        <a class="dropdown-item" href="/dashboard">
+                                            Dashboard
+                                        </a>
+                                        <a class="dropdown-item" href="/mycart">
+                                            My Cart
+                                        </a>
+                                    @endif
+                                    
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

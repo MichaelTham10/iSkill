@@ -23,6 +23,7 @@ class CreateCoursesTable extends Migration
             $table->string("description");
             $table->integer("rate");
             $table->string("image");
+            $table->integer("rate_count");
             $table->timestamps();
 
             $table->foreign('category_id')->references('id')->on('categories');

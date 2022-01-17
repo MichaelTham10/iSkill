@@ -16,7 +16,7 @@
                     
                     <h1>Ayo tingkatkan skill mu, pada bidang yang kamu sukai!</h1>
                     <p>Pilih kelas sesuai dengan bidang yang kamu inginkan</p>
-                    <button id="btn-register" class="btn">Daftar Sekarang</button>
+                    <a href="{{ route('register') }}" id="btn-register" class="btn">Daftar Sekarang</a>
                     
                 </div>
                
@@ -40,7 +40,7 @@
         
         <div id="bot">
             <h2>Apa sih keuntungannya belajar di ISKILL?</h2>
-            <div class="d-flex wow fadeInUp" id="bot-content">
+            <div class="d-flex wow fadeInUp justify-content-between" id="bot-content">
                 <div class="d-flex" id="bot-detail">
                     <img id="icons" src="{{asset('assets/icon/sertif.png')}}" alt="">
                     <div class="desc-items">

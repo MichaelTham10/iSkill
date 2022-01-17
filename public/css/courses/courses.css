@@ -66,6 +66,7 @@
 .other-class-title{
     font-weight: 500;
     font-size: 28px;
+    
 }
 
 /* Menu Grid */
@@ -87,6 +88,8 @@
     border-radius: 15px;
     margin-bottom: 35px;
     margin-right: 15px;
+    overflow: hidden;
+   
 }
 
 #grid-item img{
@@ -111,10 +114,14 @@
 }
 
 #grid-item-title{
+    white-space: nowrap; 
+    
+    
     margin-bottom: 8px;
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 400;
     
+    text-overflow: ellipsis;
 }
 
 #grid-item-price{
