@@ -8,6 +8,12 @@
 @endsection
 
 @section('content')
+    @if(Session::has('alert'))
+        <div class="alert alert-danger alert-block">
+            <button type="button" class="close" data-dismiss="alert">×</button>    
+            <strong>{{ Session::get('alert') }}</strong>
+        </div>
+    @endif
     <div class="container class">
         <div class="wrapper">
             <p id="title" class="text-center wow fadeInUp">Kursus Ilmu Komputer</p>
@@ -55,7 +61,7 @@
             <div id="grid-wrapper">
                 @foreach ($courses as $course)
                     <div id="grid-item">
-                        <img src="{{$course->image}}" alt="">
+                        <img src="{{ asset('/storage/'. $course->image)}}" alt="">
                         <div id="grid-item-desc">
                             <a href="/course/preview/{{$course->id}}" id="grid-item-title">{{$course->name}}</a> 
                             <div class="d-flex align-items-center" id="grid-rating">

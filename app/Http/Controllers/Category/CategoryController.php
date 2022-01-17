@@ -21,36 +21,26 @@ class CategoryController extends Controller
 
     
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+  
     public function create()
     {
-        //
+        return view('category.add_category');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+  
     public function store(Request $request)
     {
-        //
-    }
+        $this->validate($request, [      
+            'name' => 'required',
+            'image' => 'required'
+        ]);
+        $image_path = $request->file('image')->store('category', 'public');
+        Category::create([
+            'name' => $request->name,
+            'image' => $image_path,
+        ]);
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+        return back()->with('success', 'Kategori berhasil di tambahkan');
     }
 
     /**
@@ -59,9 +49,10 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($category_id)
     {
-        //
+        $category = Category::findOrFail($category_id);
+        return view('category.update_category', compact('category'));
     }
 
     /**
@@ -71,9 +62,32 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $category_id)
     {
-        //
+
+        $category = Category::findOrFail($category_id);
+
+        $this->validate($request, [      
+            'name' => 'required',
+           
+        ]);
+
+        if ($request->file('image') != null) {
+            $image_path = $request->file('image')->store('category', 'public');
+        } else {
+            $image_path = $category->image;
+        }
+
+       
+        Category::findOrFail($category_id)->update([
+            
+            'name' => $request->name,
+            'image' => $image_path,
+            
+            
+        ]);
+
+        return back()->with('success', 'Kategori berhasil di update');
     }
 
     /**
@@ -82,8 +96,9 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($category_id)
     {
-        //
+        Category::destroy($category_id);
+        return back()->with('success', 'Kategori berhasil di delete');
     }
 }

@@ -10,6 +10,9 @@ class CourseDetail extends Model
     use HasFactory;
 
     protected $fillable = [
+        'course_id',
+        'title',
+        'video',
         'current',
         'status',
         

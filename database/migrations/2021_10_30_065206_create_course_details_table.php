@@ -20,10 +20,10 @@ class CreateCourseDetailsTable extends Migration
             $table->string("title");
             $table->string("video");
             $table->boolean("current");
-            $table->boolean("status");
+            $table->boolean("status")->default(false);
             $table->timestamps();
 
-            $table->foreign('course_id')->references('id')->on('courses');
+            $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
             
         });
     }

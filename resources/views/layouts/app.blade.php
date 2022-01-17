@@ -69,12 +69,16 @@
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     @if (Auth::user()->is_admin)
-                                        <a class="dropdown-item" href="">
+                                        <a class="dropdown-item" href="/add-course">
                                             Add Course
                                         </a>
-                                        <a class="dropdown-item" href="/manage-course">
-                                            Manage Course
+                                        <a class="dropdown-item" href="/add-category">
+                                            Add Category
                                         </a>
+                                        <a class="dropdown-item" href="/manage-course">
+                                            Manage Course & Category
+                                        </a>
+                                        
                                     @else
                                         <a class="dropdown-item" href="/dashboard">
                                             Dashboard

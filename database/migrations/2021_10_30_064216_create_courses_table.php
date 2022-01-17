@@ -21,13 +21,14 @@ class CreateCoursesTable extends Migration
             $table->string("name");
             $table->bigInteger("price");
             $table->string("description");
-            $table->integer("rate");
+            $table->integer("rate")->default(0);
             $table->string("image");
-            $table->integer("rate_count");
+            $table->integer("rate_count")->default(0);
             $table->timestamps();
 
-            $table->foreign('category_id')->references('id')->on('categories');
-            $table->foreign('lecturer_id')->references('id')->on('lecturers');
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+            
+            $table->foreign('lecturer_id')->references('id')->on('lecturers')->onDelete('cascade');
             
         });
     }

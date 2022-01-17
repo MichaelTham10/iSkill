@@ -1,0 +1,10 @@
+#btn_submit{
+    display: flex;
+    border: 1px solid #D52484;
+    background-color: #D52484;
+    border-radius: 50px;
+    margin-left: auto;
+    padding: 6px 17px 6px 17px;
+    color: #ffffff;
+    font-weight: 500;
+}

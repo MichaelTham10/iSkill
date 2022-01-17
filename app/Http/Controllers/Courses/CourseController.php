@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\CourseDetail;
 use App\Models\Courses;
+use App\Models\Lecturer;
 use Illuminate\Http\Request;
 
 class CourseController extends Controller
@@ -25,7 +26,7 @@ class CourseController extends Controller
 
     public function manageCourse(){
         $categories = Category::all();
-        return view('courses.manage_category', compact('categories'));
+        return view('courses.manage_courses', compact('categories'));
     }
 
     public function preview($id)
@@ -34,30 +35,55 @@ class CourseController extends Controller
 
         $detail = CourseDetail::where('course_id',$id)->where('current',true)->first();
 
+        if($detail == null)
+        {
+            return back()->with('alert', 'Kelas belum siap untuk diakses');
+        }
+
         return view('courses.preview', compact('course', 'detail'));
 
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+   
     public function create()
     {
-        //
+        $categories = Category::all();
+        $lecturers = Lecturer::all();
+        $courses = Courses::all();
+        return view('courses.add_courses', compact('categories', 'lecturers', 'courses'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+   
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'category' => 'required',
+            'lecturer' => 'required',
+            'name' => 'required',
+            'price' => 'required',
+            'description' => 'required',
+            'image' => 'required',
+        ]);
+
+        $image_path = $request->file('image')->store('course', 'public');
+
+        Courses::create([
+            'category_id' => $request->category,
+            'lecturer_id' => $request->lecturer,
+            'name' => $request->name,
+            'price' => $request->price,
+            'description' => $request->description,
+            'image' => $image_path,
+        ]);
+
+        return back()->with('success', 'Kursus baru telah ditambahkan');
     }
+
+   public function manage($category_id)
+   {
+       $courses = Courses::where('category_id',$category_id)->get();
+        return view('courses.managing_course', compact('courses'));
+   }
 
     /**
      * Display the specified resource.
@@ -70,15 +96,12 @@ class CourseController extends Controller
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+   
+    public function edit($course_id)
     {
-        //
+        $course = Courses::findOrFail($course_id);
+        $lecturers = Lecturer::all();
+        return view('courses.update_course', compact('course', 'lecturers'));
     }
 
     /**
@@ -88,19 +111,30 @@ class CourseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $course_id)
     {
-        //
+        $this->validate($request, [
+            'lecturer' => 'required',
+            'name' => 'required',
+            'price' => 'required',
+            'description' => 'required',
+        ]);
+
+        Courses::findOrFail($course_id)->update([
+            'lecturer_id' => $request->lecturer,
+            'name' => $request->name,
+            'price' => $request->price,
+            'description' => $request->description,
+            
+        ]);
+
+        return back()->with('success', 'Kursus berhasil di update');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    
+    public function destroy($course_id)
     {
-        //
+        Courses::destroy($course_id);
+        return back()->with('success', 'Delete kursus berhasil');
     }
 }

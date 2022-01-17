@@ -20,7 +20,7 @@
                     
                     @foreach ($carts as $cart)
                         <div class="shadow p-3 py-4 mb-5 bg-white rounded d-flex align-items-center">
-                            <img class="rounded mx-3" width="100px" height="100px" src="{{$cart->course->image}}" alt="">
+                            <img class="rounded mx-3" width="100px" height="100px" src="{{ asset('/storage/'. $cart->course->image)}}" alt="">
                             <div class="d-flex align-items-center justify-content-between">
                                 <div class="w-75">
                                     <p>{{$cart->course->name}}</p>

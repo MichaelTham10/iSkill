@@ -15,25 +15,23 @@ class CoursesDetailController extends Controller
      */
     public function index($id)
     {
+        
         $getVideo = CourseDetail::findOrFail($id);
 
         $details = CourseDetail::where('course_id',$getVideo->course_id)->get();
 
-        
-        //dd($getVideo);
-
         return view('courses.detail', compact('details', 'getVideo'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+
+    public function manage($course_id)
     {
-        //
+        $details = CourseDetail::where('course_id', $course_id)->get();
+
+        return view('courses.managing_detail', compact('details'));
     }
+
+    
 
     public function statusUpdate($nextId, $prevId)
     {
@@ -93,29 +91,47 @@ class CoursesDetailController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'course' => 'required',
+            'title' => 'required',
+            'link' => 'required',
+            
+        ]);
+
+        $checkFirstTime = CourseDetail::where('course_id', $request->course)->get();
+        if($checkFirstTime->isEmpty()){
+            CourseDetail::create([
+                'course_id' => $request->course,
+                'title' => $request->title,
+                'video' => $request->link,
+                'current' => true,
+            ]);
+        }else{
+            CourseDetail::create([
+                'course_id' => $request->course,
+                'title' => $request->title,
+                'video' => $request->link,
+                'current' => false,
+            ]);
+        }
+
+       
+
+        return back()->with('success', 'Detail kursus telah ditambahkan');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+   
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+   
+    public function edit($detail_id)
     {
-        //
+        $detail = CourseDetail::findOrFail($detail_id);
+
+        return view('courses.update_detail', compact('detail'));
     }
 
     /**
@@ -125,9 +141,20 @@ class CoursesDetailController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $detail_id)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required',
+            'link' => 'required',
+        ]);
+
+        CourseDetail::findOrFail($detail_id)->update([
+            'title' => $request->title,
+            'video' => $request->link,
+            
+        ]);
+
+        return back()->with('success', 'Update detail kursus berhasil');
     }
 
     /**

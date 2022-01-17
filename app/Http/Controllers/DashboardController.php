@@ -10,7 +10,9 @@ class DashboardController extends Controller
 {
     public function index(){
         $inventories = Inventory::where('user_id', Auth::user()->id)->get();
-
+         
         return view('dashboard.dashboard', compact('inventories'));
     }
+
+
 }
