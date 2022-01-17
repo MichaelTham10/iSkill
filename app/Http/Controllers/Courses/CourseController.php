@@ -20,8 +20,8 @@ class CourseController extends Controller
     {
         
         $courses = Courses::where('category_id',$id)->get();
-
-        return view('courses.course' , compact('courses'));
+        $topCourse = Courses::where('category_id',$id)->orderBy('rate_count','desc')->take(2)->get();
+        return view('courses.course' , compact('courses', 'topCourse'));
     }
 
     public function manageCourse(){

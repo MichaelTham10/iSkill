@@ -20,38 +20,32 @@
             <div id="top-class">
                 <p id="top-class-title">Kelas Paling Top</p>
                 <div class="d-flex align-items-center">
+                    @foreach ($topCourse as $item)
                     <div class="row" id="top-class-detail">
                         <div class="col-7">
-                            <p id="detail-class-title">Membuat website dengan laravel</p>
-                            <div class="d-flex align-items-center" id="rating">
-                                
-                                <span id="star-1" class="fa fa-star"></span>
-                                <span id="star-2" class="fa fa-star"></span>
-                                <span id="star-3" class="fa fa-star"></span>
-                                <span id="star-4" class="fa fa-star"></span>
-                                <span id="star-5" class="fa fa-star"></span>
-                                <span>(550)</span>
+                            <br>
+                            <br>
+                            <div style=" height: 67px; overflow: hidden;">
+                                <p style="font-size: 21px">{{$item->name}}</p>
                             </div>
-                            <p id="detail-class-price">Rp.150.000</p>
+                                <div class="d-flex align-items-center" id="rating">
+                                    
+                                    <span id="star-1" class="fa fa-star"></span>
+                                    <span id="star-2" class="fa fa-star"></span>
+                                    <span id="star-3" class="fa fa-star"></span>
+                                    <span id="star-4" class="fa fa-star"></span>
+                                    <span id="star-5" class="fa fa-star"></span>
+                                    <span>{{$item->rate_count}}</span>
+                                </div>
+                            <p id="detail-class-price">Rp. {{number_format($item->price)}}</p>
                         </div>
-                        <div id="detail-class-img" class="col-5"></div>
-                    </div>
-                    <div class="row" id="top-class-detail">
-                        <div class="col-7">
-                            <p id="detail-class-title">Membuat website dengan laravel</p>
-                            <div class="d-flex align-items-center" id="rating">
-                                
-                                <span id="star-1" class="fa fa-star"></span>
-                                <span id="star-2" class="fa fa-star"></span>
-                                <span id="star-3" class="fa fa-star"></span>
-                                <span id="star-4" class="fa fa-star"></span>
-                                <span id="star-5" class="fa fa-star"></span>
-                                <span>(550)</span>
-                            </div>
-                            <p id="detail-class-price">Rp.150.000</p>
+                        <div>
+                            <img class="pt-5 pr-2" src="{{asset('/storage/'.$item->image)}}" width="200px" height="200px" alt="">
+
                         </div>
-                        <div id="detail-class-img" class="col-5"></div>
                     </div>
+                    @endforeach
+                    
                 </div>
             </div>
         </div>
